@@ -10,3 +10,5 @@
         A commit is when you make changes to a repository. A good commit message gives a description of changes made during the commit.
 * What is a merge conflict?
         A merge conflict is occurs when there are different changes to the same file and they are both merged to the master branch. Git shows an error when there is a merge conflict and it must be resolved.
+
+* !!
