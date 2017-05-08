@@ -1,7 +1,7 @@
 puts "Enter Your Name:"
-  name = gets.chomp
+  your_name = gets.chomp
     sleep 1 # 1 sec pause, before the next question
-puts "Ok #{name}, how old are you?"
+puts "Ok #{your_name}, how old are you?"
   age = gets.chomp.to_i
     sleep 1
 puts "You're #{age} huh? What year were you born?"
@@ -20,6 +20,10 @@ until medical == "yes" or medical == "no"
   medical = gets.chomp
 end
 
+if (your_name == "Drake Cula") or (your_name == "Tu Fang")
+  abort ("Definitely a vampire") #abort to end program regardless of other conditions
+end
+
 
 if (Time.new.year - year_of_birth == age or age + 1) && (bread == "yes") && (medical == "yes")
   puts "Probably not a vampire"
@@ -27,6 +31,8 @@ elsif (Time.new.year - year_of_birth != age or age + 1) && (bread == "no") or (m
   puts "Probably a vampire"
 elsif (Time.new.year - year_of_birth != age or age + 1) && (bread == "no") && (medical == "no")
   puts "Almost Certainly A Vampire"
+else
+  puts "results inconclusive"
 end
 
 
