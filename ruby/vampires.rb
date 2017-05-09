@@ -5,7 +5,7 @@ puts "How many employees will be processed?(enter a number)"
 end
 
 
-for i in (1..employees)
+for i in (1..employees) #for the number of employees to be processed
 
 puts "Enter Your Name:"
   your_name = gets.chomp
@@ -47,7 +47,7 @@ until user_3.include?("done") || allergy == "sunshine"
   user_3.push(allergy)
 end
 
-if user_3.include?("sunshine")
+if user_3.include?("sunshine") #If the array of allergies doesnt include sunshine
   sunshine = true
   puts "Probably a vampire"
 end
@@ -56,7 +56,7 @@ age_x = Time.new.year.to_i
 responses = []
 age_right = false
 
-unless sunshine == true
+unless sunshine == true #Unless sunshine allergy is true and the response is automatically "Probably a vampire"
   if (your_name == "Drake Cula") || (your_name == "Tu Fang")
     a = "Definitely a vampire"
     puts a
@@ -81,7 +81,7 @@ unless sunshine == true
    end
   end
 
-  unless (your_name == "Drake Cula") || (your_name == "Tu Fang")
+  unless (your_name == "Drake Cula") || (your_name == "Tu Fang") #unless you have a vampire name and it is certain that you are a vampire
     if (age_x - year_of_birth != age) && (age_x - year_of_birth != (age + 1))
      age_right = false
       if ((age_right == false) && (medical == false && bread == true)) || ((age_right == false) && (medical == true && bread == false))
@@ -90,7 +90,7 @@ unless sunshine == true
       responses.push(d)
       end
     end
-  end # Unless yo have a vampire name
+  end # Unless you have a vampire name
 
   if responses == []
   puts "results inconclusive"
