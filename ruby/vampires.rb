@@ -14,7 +14,6 @@ puts "Ok #{your_name}, how old are you?"
 puts "You're #{age} huh? What year were you born?"
   year_of_birth = gets.chomp.to_i
 
-bread = false
 user = ""
 until user == "yes" or user == "no"
   puts "Ahhhhh #{year_of_birth}. We serve garlic bread in the cafe. It's really good. Would you like to order some? (answer: yes or no)"
@@ -23,9 +22,10 @@ end
 
 if user == "yes"
   bread = true
+else
+  bread = false
 end
 
-medical = false
 user_2 = ""
 until user_2 == "yes" or user_2 == "no"
   puts "You want to enroll in our medical plan? (answer: yes or no)"
@@ -34,6 +34,8 @@ end
 
 if user_2 == "yes"
   medical = true
+else
+  medical = false
 end
 
 sunshine = false
