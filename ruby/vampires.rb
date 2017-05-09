@@ -36,71 +36,66 @@ if user_2 == "yes"
   medical = true
 end
 
+sunshine = false
+user_3 = []
+allergy = ""
+until user_3.include?("done") || allergy == "sunshine"
+  puts "Enter and allergies (type: done, when finished)"
+  allergy = gets.chomp
+  user_3.push(allergy)
+end
+
+if user_3.include?("sunshine")
+  sunshine = true
+  puts "Probably a vampire"
+end
+
 age_x = Time.new.year.to_i
 responses = []
 age_right = false
 
-if (your_name == "Drake Cula") || (your_name == "Tu Fang")
-  a = "definitely a vampire"
-  puts a
-  responses.push(a)
-end
+unless sunshine == true
+  if (your_name == "Drake Cula") || (your_name == "Tu Fang")
+    a = "Definitely a vampire"
+    puts a
+    responses.push(a)
+  end
 
-if (age_x - year_of_birth != age) && (age_x -year_of_birth != (age + 1))
-  x = true
-  if x && medical == false && bread == false
+  if (age_x - year_of_birth != age) && (age_x -year_of_birth != (age + 1))
+    age_right = false
+    if (age_right == false) && medical == false && bread == false
     b = "Almost Certainly a vampire."
     puts b
     responses.push(b)
+   end
   end
-end
 
-if (age_x - year_of_birth == age) || (age_x - year_of_birth == (age + 1))
-  age_right = true
-  if age_right && (medical or bread) && (your_name != "Drake Cula") && (your_name != "Tu Fang")
-    c = "Probably not a vampire."
-    puts c
-    responses.push(c)
-  end
-end
-
-if (age_x - year_of_birth != age) && (age_x - year_of_birth != (age + 1))
-  age_right = false
-  if ((age_right == false) && (medical == false && bread == true)) || ((age_right == false) && (medical == true && bread == false))
-    d = "Probably a vampire."
-    puts d
-    responses.push(d)
-  end
-end
-
-if responses == []
-  puts "results inconclusive"
-end
-end
-
-=begin
-age_x = Time.new.year.to_i
-unless (your_name == "Drake Cula") or (your_name == "Tu Fang")
   if (age_x - year_of_birth == age) || (age_x - year_of_birth == (age + 1))
-    age = 0
-    if age == 0 && (bread || medical == "yes")
-  puts "Probably not a vampire"
+    age_right = true
+    if age_right && (medical or bread) && (your_name != "Drake Cula") && (your_name != "Tu Fang")
+     c = "Probably not a vampire."
+     puts c
+     responses.push(c)
+   end
   end
-  elsif (age_x - year_of_birth != age) || (age_x - year_of_birth != (age + 1))
-    age = 1
-    if age == 1 && (bread || medical == "no")
-  puts "Probably a vampire"
-  end
-  elsif (age_x - year_of_birth != age) || (age_x - year_of_birth != (age + 1))
-    age = 1
-    if age == 1 && (bread && medical == "no")
-  puts "Almost Certainly A Vampire"
-  end
-  else
+
+  unless (your_name == "Drake Cula") || (your_name == "Tu Fang")
+    if (age_x - year_of_birth != age) && (age_x - year_of_birth != (age + 1))
+     age_right = false
+      if ((age_right == false) && (medical == false && bread == true)) || ((age_right == false) && (medical == true && bread == false))
+      d = "Probably a vampire."
+      puts d
+      responses.push(d)
+      end
+    end
+  end # Unless yo have a vampire name
+
+  if responses == []
   puts "results inconclusive"
-end
-end
-end
-=end
+  end
+end ##unless sunshine = true
+end ##end iterations
+
+
 
 
