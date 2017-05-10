@@ -47,7 +47,7 @@ until user_3.include?("done") || allergy == "sunshine"
   user_3.push(allergy)
 end
 
-if user_3.include?("sunshine") #If the array of allergies doesnt include sunshine
+if user_3.include?("sunshine") #If the array of allergies includes sunshine
   sunshine = true
   puts "Probably a vampire"
 end
@@ -95,8 +95,8 @@ unless sunshine == true #Unless sunshine allergy is true and the response is aut
   if responses == []
   puts "results inconclusive"
   end
-end ##unless sunshine = true
-end ##end iterations
+end ##unless sunshine = true, 59
+end ##end iterations, 8
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
