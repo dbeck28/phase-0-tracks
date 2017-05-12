@@ -1,3 +1,42 @@
 body {
+  font-family: arial;
+}
+
+h1 {
+  text-align: center;
+}
+header {
+  background-color: gray;
+  border-style: solid;
+  padding: 10px;
+}
+.column-1 {
   background-color: aqua;
+  display: inline-block;
+  float: left;
+  width: 46%;
+  padding: 2%;
+}
+.column-2 {
+  background-color: aqua;
+  display: inline-block;
+  float: right;
+  width: 46%;
+  padding: 2%;
+}
+
+footer {
+  background-color: gray;
+  clear: both;
+  border-style: solid
+}
+
+h2 {
+  background-color: pink;
+  border-style: solid;
+  text-align: center;
+}
+
+code {
+  background-color: white;
 }
