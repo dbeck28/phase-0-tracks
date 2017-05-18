@@ -29,4 +29,26 @@ end
 
 fibonacci(100)
 
+array = [4,5,6,2,5,9,11]
+
+def bubble_sort(array) #Define the method
+  n = array.length # A counter for the amount of times to run
+
+  loop do
+    swapped = false #before the values have been compared
+
+    (n-1).times do |i|
+      if array[i] > array[i+1] #compare the value at index i with the one next to it, if it is greater they will swap places
+        array[i], array[i+1] = array[i+1], array[i]
+        swapped = true
+      end
+    end
+
+    break if not swapped #if no swaps were made, end loop
+  end
+
+  array #return the array
+end
+
+p bubble_sort(array)
 
