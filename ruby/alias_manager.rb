@@ -48,7 +48,7 @@ end
 #allow users to enter names until the decide to quit
 all_names = [] #add an array to hold names
 until str == "quit"
-p "Enter a name so that we can convert it:"
+p "Enter a name so that we can convert it: (type 'quit' when done)"
   str = gets.chomp
 name_changer(str)
 all_names << str
