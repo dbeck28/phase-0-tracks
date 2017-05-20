@@ -1,4 +1,5 @@
 str = ""
+
 def name_changer(str)
   consonants = "bcdfghjklmnpqrstvwxyzb".split('') #extra b included to avoid edge case
   vowels = ["a", "e", "i", "o", "u", "a"] #extra 'a' included to avoid edge case
@@ -34,17 +35,37 @@ def name_changer(str)
   final_name.map {|word|
     word = word.capitalize!
   }
-  if final_name.join(" ") == "Raov"
+  final_name = final_name.join(" ")
+  if final_name == "Raov"
     #Raov is 'quit' converted
     p "done"
   elsif
-    p final_name.join(" ")
+    p final_name
   end
+  return final_name
 end
 
 #allow users to enter names until the decide to quit
+all_names = [] #add an array to hold names
 until str == "quit"
 p "Enter a name so that we can convert it:"
   str = gets.chomp
 name_changer(str)
+all_names << str
 end
+
+all_names.map { |word| #Iterate thru that names list
+  if word != "quit" #if the user has not typed quit
+    changed_name = name_changer(word)
+    p changed_name.concat(" is actually ").concat(word) #leave a message regarding the change
+  else
+    break #otherwise quit the program
+  end
+}
+
+
+
+
+
+
+
