@@ -13,10 +13,12 @@ Drool rate:
 
 Behavior --------------
 Roll over
+Speak
 High five
 Dance
 Attack
 Play dead
+Jump
 =end
 
 class Puppy
