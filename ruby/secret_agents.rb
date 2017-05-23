@@ -51,3 +51,12 @@ elsif answer == "encrypt"
 else
   puts "invalid input"
 end
+
+p "enter a number, or type quit to exit"
+x = gets.chomp.to_f
+
+p "enter an operator"
+op = gets.chomp
+
+p "enter another number"
+y = gets.chomp.to_f
