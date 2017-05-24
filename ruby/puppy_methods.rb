@@ -21,6 +21,9 @@ class Puppy
     puts "I sniffed the #{item}"
   end
 
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
 
 end
 
@@ -30,4 +33,33 @@ tj.speak(9)
 tj.roll_over
 p tj.dog_years(5)
 tj.sniff("toilet")
+
+class Homework
+
+  def initialize
+    puts "Starting new homework assignment..."
+  end
+
+  def doing_hw(subject)
+    puts "Doing #{subject} homework..."
+  end
+
+  def submit_hw(subject)
+    puts "Submitting #{subject} homework..."
+  end
+
+end
+
+students = []
+for student in 1..50
+  students << Homework.new
+end
+
+students.each {|student|
+  student.doing_hw("Italian")
+  student.submit_hw("Algebra")
+}
+
+p students.length
+
 
