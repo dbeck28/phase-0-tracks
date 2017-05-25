@@ -91,10 +91,27 @@ pretty_list(new_list)
 
 =begin
 What did you learn about pseudocode from working on this challenge?
+
+- I learned that pseudocode can make the rest of the coding process go much more smoothly. It gives you an outline to follow before you start writing your code.
+
 What are the tradeoffs of using arrays and hashes for this challenge?
+
+- Hashes allow you to access items by name instead of their index. It also allows you to set a value for the quantity of the items; whereas an array would require you to have each item and quantity set into their own 2-item array.
+
 What does a method return?
+
+-A method returns an output with whatever changes were made to the input
+
 What kind of things can you pass into methods as arguments?
+
+-strings, data structures, integers, floats, values
+
 How can you pass information between methods?
+
+- You can use @ to make items symbols and readable in methods outside of its scope
+
 What concepts were solidified in this challenge, and what concepts are still confusing?
+
+- I have a much better understanding of how to structure pseudocode so that it is more understandable, as well as a better understanding of ways to manipulate hashes. I am also going to be more aware of whether or not a given method is destructive or not.
 =end
 
