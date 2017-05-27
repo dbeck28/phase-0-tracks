@@ -1,9 +1,11 @@
 class Santa
+  attr_accessor :age, :ethnicity, :gender
+
   def initialize(gender = "n/a", ethnicity = "n/a")
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = rand(1..140)
   end
 
   def speak
@@ -18,22 +20,25 @@ class Santa
     @age += 1
   end
 
-  def age
-    p @age
-  end
+
+  #def gender_setter(gender)
+   # @gender = gender
+  #end
+
+  #def ethnicity
+   # p @ethnicity
+  #end
+
+  #def age
+   # p @age
+  #end
+
 
   def get_mad_at(reindeer)
     @reindeer_ranking.delete(reindeer)
     @reindeer_ranking << reindeer
   end
 
-  def ethnicity
-    p @ethnicity
-  end
-
-  def gender_setter(gender)
-    @gender = gender
-  end
 end
 
 genders = ["male", "female", "transgender", "gender fluid", "other", "N/A"]
@@ -41,8 +46,10 @@ genders = ["male", "female", "transgender", "gender fluid", "other", "N/A"]
 ethnicities = ["black", "Hispanic", "white", "Asian-Pacific", "other"]
 
 santas = []
-#For the length of the genders array, create new instances of Santa.new with that takes ra
-genders.length.times do |x|
+#For the length of the genders array, create new instances of Santa.new
+
+=begin
+gender.times do |x|
   santas << Santa.new(genders[x], ethnicities[x])
 end
 
@@ -54,9 +61,16 @@ jerry.celebrate_birthday
 p jerry
 jerry.get_mad_at("Vixen")
 p jerry
-jerry.ethnicity
-jerry.gender_setter("male")
+p jerry.age
+p jerry.ethnicity
+jerry.ethnicity = "Asian"
+p jerry.ethnicity
+jerry.gender = "male"
 p jerry
+=end
 
+200.times do |x|
+  p Santa.new(genders.sample, ethnicities.sample)
+end
 
 
