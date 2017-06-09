@@ -1,0 +1,43 @@
+sqlite> select * from
+   ...> users
+   ...> inner join
+   ...> reviews
+   ...> on
+   ...> users.id = reviews.user_id
+   ...> inner join
+   ...> businesses
+   ...> on
+   ...> reviews.business_id = businesses.id;
+2|Shirley|James|1|1|Horrible|1|2|1|Geico
+3|Ryan|George|2|2|Ok|2|3|2|NBA
+
+sqlite> select users.first_name,
+   ...> businesses.name,
+   ...> reviews.stars,
+   ...> reviews.comment
+   ...> from
+   ...> users
+   ...> inner join
+   ...> reviews
+   ...> on
+   ...> users.id = reviews.user_id
+   ...> inner join
+   ...> businesses
+   ...> on
+   ...> reviews.business_id = businesses.id;
+Shirley|Geico|1|Horrible
+Ryan|NBA|2|Ok
+
+sqlite> select * from
+   ...> users
+   ...> inner join
+   ...> reviews
+   ...> on
+   ...> users.id = reviews.user_id
+   ...> inner join
+   ...> businesses
+   ...> on
+   ...> reviews.business_id = businesses.id
+   ...> where
+   ...> businesses.id = 1;
+2|Shirley|James|1|1|Horrible|1|2|1|Geico
