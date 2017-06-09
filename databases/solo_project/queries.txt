@@ -1,0 +1,45 @@
+sqlite> SELECT * FROM artists
+   ...> ;
+1|KanYe West|Chicago|1
+2|Jay_Z|Brooklyn|2
+3|Kendrick Lamar|LA|3
+
+Kendrick Lamar clarified that his hometown
+is Compton. That attribute must be updated.
+
+sqlite> UPDATE artists SET hometown="Compton" WHERE name="Kendrick Lamar";
+sqlite> SELECT * FROM artists WHERE name="Kendrick Lamar";
+3|Kendrick Lamar|Compton|3
+sqlite>
+
+sqlite> SELECT * FROM artists JOIN labels ON artists.label_id = labels.id;
+1|KanYe West|Chicago|1|1|Def Jam
+2|Jay_Z|Brooklyn|2|2|Roc Nation
+3|Kendrick Lamar|Compton|3|3|Top Dawg Ent.
+
+sqlite> Select artists.name, labels.name FROM artists JOIN labels ON artists.label_id = labels.id;
+KanYe West|Def Jam
+Jay_Z|Roc Nation
+Kendrick Lamar|Top Dawg Ent.
+
+KanYe West decided to retire. Remove him from
+the artists tables.
+
+sqlite> DELETE FROM artists WHERE name="KanYe West";
+sqlite> Select * from artists;
+2|Jay_Z|Brooklyn|2
+3|Kendrick Lamar|Compton|3
+sqlite>
+
+sqlite> SELECT artists.hometown, labels.name FROM artists JOIN labels ON artists.label_id = labels.id;
+Brooklyn|Roc Nation
+Compton|Top Dawg Ent.
+
+sqlite> SELECT artists.name, labels.id FROM artists JOIN labels ON artists.label_id = labels.id;
+Jay_Z|2
+Kendrick Lamar|3
+
+sqlite> SELECT artists.id, labels.name FROM artists JOIN labels ON artists.label_id = labels.id;
+2|Roc Nation
+3|Top Dawg Ent.
+
