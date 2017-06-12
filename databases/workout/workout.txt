@@ -1,0 +1,102 @@
+create table body_parts (
+  id integer primary key,
+  name VARCHAR(255),
+  workout_id INT,
+  FOREIGN KEY (workout_id) REFERENCES workouts(id)
+);
+
+INSERT INTO body_parts (name) VALUES ("Arms");
+INSERT INTO body_parts (name) VALUES ("Legs");
+INSERT INTO body_parts (name) VALUES ("Shoulders");
+INSERT INTO body_parts (name) VALUES ("Back");
+
+---------------------------------------------------------
+
+# This table holds either a 45 min workout or 1 hour (+ cardio(30 min))
+# reference the body parts table and the exercises table
+
+create table workouts (
+  id integer primary key,
+  name VARCHAR(255),
+  body_part_id INT,
+  arm_exercises_id INT,
+  leg_exercises_id INT,
+  shoulder_exercises_id INT,
+  back_exercises_id INT,
+  FOREIGN KEY (body_part_id) REFERENCES body_parts(id),
+  FOREIGN KEY (arm_exercises_id) REFERENCES arm_exercises(id),
+  FOREIGN KEY (leg_exercises_id) REFERENCES leg_exercises(id),
+  FOREIGN KEY (shoulder_exercises_id) REFERENCES shoulder_exercises(id),
+  FOREIGN KEY (back_exercises_id) REFERENCES back_exercises(id)
+);
+
+INSERT INTO workouts (name) VALUES ("45 min workout");
+INSERT INTO workouts (name) VALUES ("90 min workout");
+
+---------------------------------------------------------
+
+create table arm_exercises (
+  id integer primary key,
+  name VARCHAR(255),
+  reps VARCHAR(255)
+);
+
+INSERT INTO arm_exercises (name, reps) VALUES ("Pullups", "5 sets of 10 - 20");
+INSERT INTO arm_exercises (name, reps) VALUES ("DB Curls", "4 sets of 8 to 10");
+INSERT INTO arm_exercises (name, reps) VALUES ("Heavy Hammer DB Curls", "4 sets of 8 to 10");
+INSERT INTO arm_exercises (name, reps) VALUES ("EZ Bar Curls", "4 sets of 8 to 10");
+INSERT INTO arm_exercises (name, reps) VALUES ("Rope", "4 sets 30 secs to a minute");
+INSERT INTO arm_exercises (name, reps) VALUES ("Cable Curls", "4 sets of 12 to 15");
+INSERT INTO arm_exercises (name, reps) VALUES ("Cable tricep extensions", "4 sets of 8 to 10");
+INSERT INTO arm_exercises (name, reps) VALUES ("Dips", "4 sets of 8 to 10");
+INSERT INTO arm_exercises (name, reps) VALUES ("DB Tricep Extensions", "4 sets of 8 to 10");
+INSERT INTO arm_exercises (name, reps) VALUES ("DB Press", "4 sets of 8 to 10");
+
+---------------------------------------------------------
+
+create table leg_exercises (
+  id integer primary key,
+  name VARCHAR(255),
+  reps VARCHAR(255)
+);
+
+INSERT INTO leg_exercises (name, reps) VALUES ("Barbell Squats", "5 sets of 10 - 20");
+INSERT INTO leg_exercises (name, reps) VALUES ("Deep Barbell Lunges", "3 sets of 10");
+INSERT INTO leg_exercises (name, reps) VALUES ("DB Lunges", "4 sets of 10");
+INSERT INTO leg_exercises (name, reps) VALUES ("Step Ups", "4 sets of 12 - 15");
+INSERT INTO leg_exercises (name, reps) VALUES ("Leg Extensions", "4 sets of 10");
+INSERT INTO leg_exercises (name, reps) VALUES ("Leg Curls", "4 sets of 10");
+INSERT INTO leg_exercises (name, reps) VALUES ("Straight Leg Deadlift Moderate", "5 sets of 8 - 12");
+
+---------------------------------------------------------
+
+create table shoulder_exercises (
+  id integer primary key,
+  name VARCHAR(255),
+  reps VARCHAR(255)
+);
+
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Shoulder Press Heavy", "4 sets of 6 - 8");
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Shoulder Circuit Burn", "4 * 10 * 4");
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Arnold's Shoulder Press", "4 sets of 6 - 8");
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Shrugs", "4 sets of 20 - 25");
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Rear Delt Butterflies", "4 sets of 10 - 12");
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Rear Delt Cable Fly", "4 sets of 10 - 12");
+INSERT INTO shoulder_exercises (name, reps) VALUES ("Machine Shoulder Press", "4 sets of 8 - 10");
+
+---------------------------------------------------------
+
+create table back_exercises (
+  id integer primary key,
+  name VARCHAR(255),
+  reps VARCHAR(255)
+);
+
+INSERT INTO back_exercises (name, reps) VALUES ("Barbell Deadlift Heavy", "5 sets of 5 - 7");
+INSERT INTO back_exercises (name, reps) VALUES ("Low Row", "4 sets of 10 - 12");
+INSERT INTO back_exercises (name, reps) VALUES ("Lat Pull Down", "4 sets of 10 - 12");
+INSERT INTO back_exercises (name, reps) VALUES ("DB Row", "4 sets of 10 - 12");
+INSERT INTO back_exercises (name, reps) VALUES ("Hex Bar Deadlift Heavy", "5 sets of 5 - 7");
+INSERT INTO back_exercises (name, reps) VALUES ("T-Bar Row", "4 sets of 8 - 10");
+INSERT INTO back_exercises (name, reps) VALUES ("Pullups", "4 sets of 8 - 10");
+INSERT INTO back_exercises (name, reps) VALUES ("Row Row Boat Machine", "5 minutes");
