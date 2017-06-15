@@ -17,10 +17,26 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/column/:column' do
+  column_type = params['column']
+  @column = db.execute("SELECT #{column_type} FROM students")
+  erb :single_column
+end
+
+get '/students/delete' do
+  erb :remove_student
+end
+
+
 # create new students via
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
+  redirect '/'
+end
+
+post '/delete' do
+  db.execute("DELETE FROM students WHERE name=?", [params['name']])
   redirect '/'
 end
 
